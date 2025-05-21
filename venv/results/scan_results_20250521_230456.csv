@@ -1,0 +1,2 @@
+Domain,IP,DNS A,Registrar,Country,Org,Reverse DNS,Port Scan
+aau.edu.et,213.55.95.15,['213.55.95.15'],,,,N/A,Error running nmap: [WinError 2] The system cannot find the file specified

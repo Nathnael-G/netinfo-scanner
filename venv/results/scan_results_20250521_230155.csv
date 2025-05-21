@@ -1,0 +1,2 @@
+Domain,IP,DNS A,Registrar,Country,Org,Reverse DNS,Port Scan
+google.com,142.250.200.238,['142.250.200.238'],"MarkMonitor, Inc.",US,GOOGLE,mrs08s18-in-f14.1e100.net,Error running nmap: [WinError 2] The system cannot find the file specified

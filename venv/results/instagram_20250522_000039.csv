@@ -1,0 +1,2 @@
+Domain,IP,DNS A,Registrar,Country,Org,Reverse DNS,Port Scan
+instagram.com,57.144.138.34,['57.144.138.34'],"RegistrarSafe, LLC",US,FB-BLOCK,instagram-p42-shv-01-mba2.fbcdn.net,Error running nmap: [WinError 2] The system cannot find the file specified

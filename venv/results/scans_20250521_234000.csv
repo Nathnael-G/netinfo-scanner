@@ -1,0 +1,4 @@
+Domain,IP,DNS A,Registrar,Country,Org,Reverse DNS,Port Scan
+github.com,140.82.121.3,['140.82.121.3'],"MarkMonitor, Inc.",US,GITHU,lb-140-82-121-3-fra.github.com,Error running nmap: [WinError 2] The system cannot find the file specified
+youtube.com,142.250.201.46,['142.250.201.46'],"MarkMonitor, Inc.",US,GOOGLE,mrs08s20-in-f14.1e100.net,Error running nmap: [WinError 2] The system cannot find the file specified
+facebook.com,57.144.138.1,['57.144.138.1'],"RegistrarSafe, LLC",US,FB-BLOCK,edge-star-mini-shv-01-mba2.facebook.com,Error running nmap: [WinError 2] The system cannot find the file specified

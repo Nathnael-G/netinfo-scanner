@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NetInfo Scanner</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    .input-container {
+      position: relative;
+      width: 100%;
+    }
+    .input-container input {
+      background: transparent;
+      border: none;
+      border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+      padding: 12px 36px 12px 36px;
+      width: 100%;
+      color: white;
+      font-size: 16px;
+      outline: none;
+    }
+    .input-container label {
+      position: absolute;
+      left: 36px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 16px;
+      pointer-events: none;
+      transition: 0.2s ease all;
+    }
+    .input-container input:focus + label,
+    .input-container input:not(:placeholder-shown) + label {
+      top: 0;
+      font-size: 12px;
+      color: white;
+    }
+    .input-icon {
+      position: absolute;
+      top: 50%;
+      left: 8px;
+      transform: translateY(-50%);
+      color: rgba(255, 255, 255, 0.7);
+    }
+  </style>
+</head>
+<body class="bg-cover bg-center bg-fixed min-h-screen flex items-center justify-center" style="background-image: url('https://img.freepik.com/premium-photo/background-purple-blue-purple-gradient-pictures-banner-background-purple-background_605423-37360.jpg?w=740');">
+  <div class="relative max-w-3xl w-full bg-transparent border-2 border-white/50 rounded-2xl backdrop-blur-[55px] p-8 text-white">
+    <h1 class="text-4xl text-center font-bold mb-8">NetInfo Scanner</h1>
+    
+    <!-- Step 1: Domain Input Form -->
+    {% if not results and not file_path %}
+    <form method="POST" class="space-y-6">
+      <div class="input-container">
+        <i class="fas fa-globe input-icon"></i>
+        <input type="text" name="domains" placeholder=" " required />
+        <label for="domains">Enter domains (comma separated)</label>
+      </div>
+      <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 transition-colors p-3 rounded-md font-semibold">
+        Scan
+      </button>
+    </form>
+    {% endif %}
+
+    <!-- Step 2: Display Results -->
+    {% if results %}
+    <div class="mt-10 space-y-6">
+      <h2 class="text-2xl font-semibold">Scan Results:</h2>
+      {% for result in results %}
+        <div class="bg-white bg-opacity-10 rounded-xl p-4 border border-white/30">
+          <h3 class="text-xl font-bold mb-2">{{ result['Domain'] }}</h3>
+          <ul class="space-y-1">
+            {% for key, val in result.items() if key != 'Domain' and key != 'Port Scan' %}
+              <li><strong>{{ key }}:</strong> {{ val }}</li>
+            {% endfor %}
+            <li>
+              <strong>Port Scan:</strong>
+              <pre class="bg-black bg-opacity-30 p-2 rounded mt-2 whitespace-pre-wrap">{{ result['Port Scan'] }}</pre>
+            </li>
+          </ul>
+        </div>
+      {% endfor %}
+    </div>
+
+    <!-- Step 3: Filename Submission -->
+    {% if not file_path %}
+    <form method="POST" class="mt-10 space-y-6">
+      <input type="hidden" name="domains" value="{{ original_domains }}">
+      <div class="input-container">
+        <i class="fas fa-save input-icon"></i>
+        <input type="text" name="filename" placeholder=" " required />
+        <label for="filename">Enter filename to download CSV</label>
+      </div>
+      <button type="submit" class="w-full bg-green-600 hover:bg-green-700 transition-colors p-3 rounded-md font-semibold">
+        Download CSV
+      </button>
+    </form>
+    {% endif %}
+    {% endif %}
+
+    <!-- Step 4: Final Download Link (only this one is shown) -->
+
+  </div>
+</body>
+</html>

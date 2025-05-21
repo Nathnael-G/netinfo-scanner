@@ -1,0 +1,4 @@
+Domain,IP,DNS A,Registrar,Country,Org,Reverse DNS,Port Scan
+tiktok.com,2.18.255.76,"['2.18.255.76', '2.18.255.154', '2.18.255.115', '2.18.255.83', '2.18.255.106', '2.18.255.92', '2.18.255.59', '2.18.255.66']",Gandi SAS,KY,AKAMAI-PA,a2-18-255-76.deploy.static.akamaitechnologies.com,Error running nmap: [WinError 2] The system cannot find the file specified
+youtube.com,142.250.201.46,['142.250.201.46'],,,GOOGLE,mrs08s20-in-f14.1e100.net,Error running nmap: [WinError 2] The system cannot find the file specified
+google.com,142.250.200.238,['142.250.200.238'],"MarkMonitor, Inc.",US,GOOGLE,mrs08s18-in-f14.1e100.net,Error running nmap: [WinError 2] The system cannot find the file specified
